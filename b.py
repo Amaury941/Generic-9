@@ -7,7 +7,6 @@ import numpy as np
 warnings.filterwarnings("ignore")
 
 def ss_or_nn (x,lista,n,aux=False):
-	
 	if x['color_value'][n] == 'Yellow' or aux == True:
 		return 1
 	return 0
