@@ -27,8 +27,6 @@ def criar_lista_estratificada(x,lista={},aim_key='continent'):
 	return lista
 
 def criar_lista(x,lista={}):
-
-
 	for n in range(len(x)):
 		try:
 			w = ss_or_nn(x,lista,n,aux = lista[x['country'][n]])
