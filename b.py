@@ -122,6 +122,18 @@ sample_sist = gerar_amostra_sistematizada (ul)
 aux0 = [k for k in ul.keys()]
 sample_sist = [{aux0[i]:ul[aux0[i]]} for i in range(3,213,3)]
 
+def pbin(p,q,n,probabilidades = []):
+	
+	for x in range(n+1):
+	  px = probabilidadeBinomial(x,n,p,q)
+	  print('P(',x,')=%.3f%s'%(px*100,'%'))
+	  probabilidades.append(px)
+
+	print ("soma dos P:%.2f%s"
+		% ((np.sum(probabilidades))*100,"%")
+	)
+	return (probabilidades)
+
 p = checkTrues(ul)[0]/checkTrues(ul)[1]
 q = (checkTrues(ul)[0]-checkTrues(ul)[1])/-checkTrues(ul)[1]
 
@@ -139,17 +151,7 @@ print('Desvio padrão: %.2f\n' % (p*q)**2)
 n = 21
 x = [i for i in range(n+1)]
 
-def pbin(p,q,n,probabilidades = []):
-	
-	for x in range(n+1):
-	  px = probabilidadeBinomial(x,n,p,q)
-	  print('P(',x,')=%.3f%s'%(px*100,'%'))
-	  probabilidades.append(px)
 
-	print ("soma dos P:%.2f%s"
-		% ((np.sum(probabilidades))*100,"%")
-	)
-	return (probabilidades)
 
 probabilidades = pbin(p,q,n)
 
