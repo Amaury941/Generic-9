@@ -4,7 +4,7 @@
   <img src="Images/image.jpeg" title="hover text" alt="histograma de frequência">
 </p>
 
-Feito na linguagem python utilizando das bibliotecas não-nativas “matplotlib”, “numpy”, “pandas” e nativas "random","math".
+Feito na linguagem python (3.9) utilizando das bibliotecas não-nativas “matplotlib”, “numpy”, “pandas” e nativas "random","math".
 <ul>
   <li> pip install matplotlib </li>
   <li> pip install numpy      </li>
