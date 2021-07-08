@@ -6,8 +6,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 warnings.filterwarnings("ignore")
 
-x = pd.read_csv("data.csv")
-
 def ss_or_nn (x,lista,n,aux=False):
 	
 	if x['color_value'][n] == 'Yellow' or aux == True:
@@ -113,15 +111,6 @@ def calcular_desvio_padrão(lista):
 def probabilidadeBinomial(x,n,p,q):
   return (factorial(n)/(factorial(n-x)*factorial(x)))*(p**x)*(q**(n-x))
 
-
-dl = criar_lista_estratificada(x)
-ul = criar_lista(x)
-sample_str = gerar_amostra_estratificada(dl)
-sample_unstr = gerar_amostra_aleatoria(ul)
-sample_sist = gerar_amostra_sistematizada (ul)
-aux0 = [k for k in ul.keys()]
-sample_sist = [{aux0[i]:ul[aux0[i]]} for i in range(3,213,3)]
-
 def pbin(p,q,n,probabilidades = []):
 	
 	for x in range(n+1):
@@ -134,25 +123,29 @@ def pbin(p,q,n,probabilidades = []):
 	)
 	return (probabilidades)
 
+
+x = pd.read_csv("data.csv")
+dl = criar_lista_estratificada(x)
+ul = criar_lista(x)
+sample_str = gerar_amostra_estratificada(dl)
+sample_unstr = gerar_amostra_aleatoria(ul)
+sample_sist = gerar_amostra_sistematizada (ul)
+aux0 = [k for k in ul.keys()]
+sample_sist = [{aux0[i]:ul[aux0[i]]} for i in range(3,213,3)]
 p = checkTrues(ul)[0]/checkTrues(ul)[1]
 q = (checkTrues(ul)[0]-checkTrues(ul)[1])/-checkTrues(ul)[1]
 
 
 print ("\nAnálises - países que tem amarelo na bandeira(1) ou não (0)\n")
-
 print('Amostra aleatória (20 países randômicos): %s\n' % sample_unstr)
 print('Amostra estratificada (4 países por continente): %s\n' % sample_str)
 print('Amostra sistemática (países de endereço multiplo de 3 menor que 213): %s\n' % sample_sist)
-
 print('p: %.2f q: %.2f'%(p,q))
 print('Variância: %.2f' % (p*q))
 print('Desvio padrão: %.2f\n' % (p*q)**2)
 
 n = 21
 x = [i for i in range(n+1)]
-
-
-
 probabilidades = pbin(p,q,n)
 
 plt.bar(x,probabilidades)
