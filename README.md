@@ -1,7 +1,7 @@
 <h1 align="center"> Análise Estatística 2</h1> 
 <img>
 <p align="center">
-  <img src="images/image.jpeg" title="hover text" alt="histograma de frequência">
+  <img src="Images/image.jpeg" title="hover text" alt="histograma de frequência">
 </p>
 
 Feito na linguagem python utilizando das bibliotecas não-nativas “matplotlib”, “numpy”, “pandas” e nativas "random","math".
