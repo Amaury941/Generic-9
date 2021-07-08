@@ -128,13 +128,13 @@ q = (checkTrues(ul)[0]-checkTrues(ul)[1])/-checkTrues(ul)[1]
 
 print ("\nAnálises - países que tem amarelo na bandeira(1) ou não (0)\n")
 
-print('amostra aleatória (20 países randômicos): %s\n' % sample_unstr)
-print('amostra estratificada (4 países por continente): %s\n' % sample_str)
-print('amostra sistemática (países de endereço multiplo de 3 menor que 213): %s\n' % sample_sist)
+print('Amostra aleatória (20 países randômicos): %s\n' % sample_unstr)
+print('Amostra estratificada (4 países por continente): %s\n' % sample_str)
+print('Amostra sistemática (países de endereço multiplo de 3 menor que 213): %s\n' % sample_sist)
 
 print('p: %.2f q: %.2f'%(p,q))
-print('variância: %.2f' % (p*q))
-print('desvio padrão: %.2f' % (p*q)**2)
+print('Variância: %.2f' % (p*q))
+print('Desvio padrão: %.2f\n' % (p*q)**2)
 
 n = 21
 x = [i for i in range(n+1)]
